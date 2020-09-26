@@ -59,6 +59,13 @@ DATEPART(quarter, a.shippeddate)
 order by totalsale desc
 
 --2.	--Which products have a price that is higher than average?
-
+With AvgProduct AS
+(select AVG(p.UnitPrice)as AvgPrice
+from  Products p
+ )
+ Select  ProductID, ProductName, UnitPrice
+ from Products
+ where UnitPrice > 28.86
+ order by UnitPrice desc
 
 
