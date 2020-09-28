@@ -68,4 +68,7 @@ from  Products p
  where UnitPrice > 28.86
  order by UnitPrice desc
 
-
+-- 
+SELECT Products.ProductName, Products.UnitPrice
+FROM Products
+WHERE Products.UnitPrice>(SELECT AVG(UnitPrice) From Products)
